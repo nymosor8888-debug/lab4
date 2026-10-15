@@ -1,14 +1,16 @@
 
-/* ===== 1. Ерөнхий тохиргоо ===== */
+/* ========================================
+   1. ӨНГӨНИЙ ҮНДСЭН ТОХИРГОО
+======================================== */
 :root {
-    --primary: #4f46e5;
-    --primary-dark: #3730a3;
-    --accent: #8b5cf6;
-    --text: #172033;
-    --muted: #697386;
-    --background: #f5f7fc;
-    --white: #ffffff;
-    --border: #e6e9f2;
+    --primary: #648575;
+    --primary-dark: #435f50;
+    --accent: #91aa96;
+    --text: #303a35;
+    --muted: #78827b;
+    --background: #f5f5ef;
+    --white: #fffefa;
+    --border: #e5e7df;
 }
 
 * {
@@ -40,7 +42,9 @@ select {
     font: inherit;
 }
 
-/* ===== 2. Header ===== */
+/* ========================================
+   2. HEADER
+======================================== */
 .site-header {
     background: var(--white);
     border-bottom: 1px solid var(--border);
@@ -71,7 +75,11 @@ select {
     width: 42px;
     height: 42px;
     border-radius: 13px;
-    background: linear-gradient(135deg, var(--primary), var(--accent));
+    background: linear-gradient(
+        135deg,
+        var(--primary-dark),
+        var(--primary)
+    );
     color: white;
     font-size: 24px;
 }
@@ -81,9 +89,12 @@ select {
     font-size: 14px;
 }
 
-/* ===== 3. Navigation: Flexbox ===== */
+/* ========================================
+   3. NAVIGATION - FLEXBOX
+======================================== */
 .main-nav {
     background: var(--white);
+    border-bottom: 1px solid var(--border);
 }
 
 .nav-list {
@@ -108,11 +119,13 @@ select {
 
 .nav-list a:hover,
 .nav-list a.active {
-    color: var(--primary);
+    color: var(--primary-dark);
     border-bottom-color: var(--primary);
 }
 
-/* ===== 4. Main layout: CSS Grid ===== */
+/* ========================================
+   4. ҮНДСЭН LAYOUT - CSS GRID
+======================================== */
 .page-layout {
     max-width: 1200px;
     margin: 36px auto 64px;
@@ -131,20 +144,28 @@ select {
     margin-top: 44px;
 }
 
-/* ===== 5. Hero section ===== */
+/* ========================================
+   5. HERO SECTION
+======================================== */
 .hero {
     position: relative;
     overflow: hidden;
     padding: 54px 44px;
     border-radius: 24px;
     color: white;
+
     background:
         radial-gradient(
             circle at 90% 10%,
-            rgba(255, 255, 255, 0.22),
+            rgba(255, 255, 255, 0.16),
             transparent 28%
         ),
-        linear-gradient(135deg, #3730a3, #4f46e5 55%, #8b5cf6);
+        linear-gradient(
+            135deg,
+            #435f50,
+            #648575 65%,
+            #91aa96
+        );
 }
 
 .hero::after {
@@ -155,37 +176,33 @@ select {
     font-size: clamp(100px, 15vw, 190px);
     font-weight: 800;
     line-height: 1;
-    color: rgba(255, 255, 255, 0.09);
+    color: rgba(255, 255, 255, 0.08);
     pointer-events: none;
 }
 
-.hero-label,
-.section-label {
-    display: inline-block;
-    font-size: 11px;
-    font-weight: 800;
-    letter-spacing: 1.8px;
-}
-
 .hero-label {
+    display: inline-block;
     padding: 6px 12px;
     margin-bottom: 18px;
     border: 1px solid rgba(255, 255, 255, 0.3);
     border-radius: 20px;
     background: rgba(255, 255, 255, 0.1);
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 1.5px;
 }
 
 .hero h1 {
     position: relative;
     z-index: 1;
+    margin-bottom: 18px;
     font-size: clamp(28px, 4vw, 43px);
     line-height: 1.25;
     letter-spacing: -1.3px;
-    margin-bottom: 18px;
 }
 
 .hero h1 span {
-    color: #ddd6fe;
+    color: #e0e9df;
 }
 
 .hero p {
@@ -193,7 +210,7 @@ select {
     z-index: 1;
     max-width: 480px;
     margin-bottom: 28px;
-    color: #eeecff;
+    color: #f0f4ef;
     font-size: 15px;
 }
 
@@ -203,7 +220,7 @@ select {
     display: inline-block;
     padding: 12px 20px;
     border-radius: 10px;
-    background: white;
+    background: #fffefa;
     color: var(--primary-dark);
     font-size: 14px;
     font-weight: 700;
@@ -212,10 +229,12 @@ select {
 
 .hero-btn:hover {
     transform: translateY(-3px);
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
 }
 
-/* ===== 6. Courses ===== */
+/* ========================================
+   6. SECTION HEADING
+======================================== */
 .section-heading {
     display: flex;
     justify-content: space-between;
@@ -225,8 +244,12 @@ select {
 }
 
 .section-label {
-    color: var(--primary);
+    display: inline-block;
     margin-bottom: 5px;
+    color: var(--primary-dark);
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 1.5px;
 }
 
 .section-title {
@@ -238,14 +261,16 @@ select {
 .course-count {
     padding: 6px 12px;
     border-radius: 20px;
-    background: #eeecff;
-    color: var(--primary);
+    background: #e8eee7;
+    color: var(--primary-dark);
     font-size: 12px;
     font-weight: 700;
     white-space: nowrap;
 }
 
-/* Cards use CSS Grid */
+/* ========================================
+   7. COURSE CARDS - CSS GRID
+======================================== */
 .card-grid {
     display: grid;
     grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -257,12 +282,14 @@ select {
     border: 1px solid var(--border);
     border-radius: 18px;
     background: var(--white);
-    transition: transform 0.25s ease, box-shadow 0.25s ease;
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
 }
 
 .card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 14px 32px rgba(38, 45, 90, 0.09);
+    box-shadow: 0 14px 32px rgba(48, 58, 53, 0.08);
 }
 
 .card-icon {
@@ -277,22 +304,22 @@ select {
 }
 
 .web-icon {
-    color: #4338ca;
-    background: #e9e7ff;
+    color: #506e60;
+    background: #e8eee7;
 }
 
 .code-icon {
-    color: #047857;
-    background: #d9fbe9;
+    color: #557456;
+    background: #e9efe4;
 }
 
 .database-icon {
-    color: #b45309;
-    background: #fff0d6;
+    color: #987c54;
+    background: #f3ecdf;
 }
 
 .card-number {
-    color: #939bad;
+    color: #89928b;
     font-size: 10px;
     font-weight: 700;
     letter-spacing: 1px;
@@ -314,22 +341,29 @@ select {
 .card-link {
     display: inline-block;
     margin-top: 14px;
-    color: var(--primary);
+    color: var(--primary-dark);
     font-size: 13px;
     font-weight: 700;
+    transition: color 0.2s ease;
 }
 
 .card-link:hover {
-    color: var(--accent);
+    color: var(--primary);
 }
 
-/* ===== 7. Registration form ===== */
+/* ========================================
+   8. REGISTRATION FORM
+======================================== */
 .form-container {
     padding: 34px;
     border: 1px solid var(--border);
     border-radius: 22px;
     background: var(--white);
-    box-shadow: 0 8px 30px rgba(38, 45, 90, 0.04);
+    box-shadow: 0 8px 30px rgba(48, 58, 53, 0.035);
+}
+
+.form-header {
+    margin-bottom: 26px;
 }
 
 .badge {
@@ -337,8 +371,8 @@ select {
     padding: 6px 11px;
     margin-bottom: 14px;
     border-radius: 7px;
-    background: #eeecff;
-    color: var(--primary);
+    background: #e8eee7;
+    color: var(--primary-dark);
     font-size: 11px;
     font-weight: 800;
     letter-spacing: 0.7px;
@@ -351,7 +385,6 @@ select {
 }
 
 .form-description {
-    margin-bottom: 26px;
     color: var(--muted);
     font-size: 14px;
 }
@@ -372,23 +405,23 @@ select {
     width: 100%;
     min-height: 48px;
     padding: 12px 14px;
-    border: 1px solid #dfe3ed;
+    border: 1px solid #dfe3da;
     border-radius: 10px;
     outline: none;
-    background: #fbfcff;
+    background: #fbfcf8;
     color: var(--text);
     font-size: 14px;
     transition: 0.2s ease;
 }
 
 .form-input::placeholder {
-    color: #a0a7b6;
+    color: #929b92;
 }
 
 .form-input:focus {
     border-color: var(--primary);
-    background: white;
-    box-shadow: 0 0 0 4px rgba(79, 70, 229, 0.1);
+    background: var(--white);
+    box-shadow: 0 0 0 4px rgba(100, 133, 117, 0.12);
 }
 
 .submit-btn {
@@ -397,7 +430,11 @@ select {
     margin-top: 5px;
     border: none;
     border-radius: 10px;
-    background: linear-gradient(135deg, var(--primary), var(--accent));
+    background: linear-gradient(
+        135deg,
+        #648575,
+        #789886
+    );
     color: white;
     font-size: 14px;
     font-weight: 700;
@@ -406,8 +443,13 @@ select {
 }
 
 .submit-btn:hover {
+    background: linear-gradient(
+        135deg,
+        #506e60,
+        #648575
+    );
     transform: translateY(-2px);
-    box-shadow: 0 8px 20px rgba(79, 70, 229, 0.22);
+    box-shadow: 0 8px 20px rgba(67, 95, 80, 0.18);
 }
 
 .form-footer {
@@ -417,7 +459,9 @@ select {
     text-align: center;
 }
 
-/* ===== 8. Sidebar ===== */
+/* ========================================
+   9. SIDEBAR
+======================================== */
 .sidebar {
     position: sticky;
     top: 24px;
@@ -440,8 +484,8 @@ select {
     width: 35px;
     height: 35px;
     border-radius: 11px;
-    background: #eeecff;
-    color: var(--primary);
+    background: #e8eee7;
+    color: var(--primary-dark);
 }
 
 .sidebar h2 {
@@ -475,8 +519,8 @@ select {
     width: 35px;
     height: 35px;
     border-radius: 10px;
-    background: #f0efff;
-    color: var(--primary);
+    background: #edf1e9;
+    color: var(--primary-dark);
     font-size: 11px;
     font-weight: 800;
 }
@@ -493,12 +537,12 @@ select {
 
 .sidebar-note {
     display: flex;
-    gap: 10px;
     align-items: flex-start;
+    gap: 10px;
     margin-top: 26px;
     padding: 14px;
     border-radius: 12px;
-    background: #f5f3ff;
+    background: #eef1e9;
 }
 
 .sidebar-note span {
@@ -506,15 +550,17 @@ select {
 }
 
 .sidebar-note p {
-    color: #51449b;
+    color: #506657;
     font-size: 12px;
     line-height: 1.7;
 }
 
-/* ===== 9. Footer ===== */
+/* ========================================
+   10. FOOTER
+======================================== */
 .site-footer {
-    background: #17172d;
-    color: white;
+    background: #303a35;
+    color: #fffefa;
 }
 
 .footer-content {
@@ -533,12 +579,14 @@ select {
 }
 
 .footer-content p {
-    color: #b9bad0;
+    color: #d0d9d1;
     font-size: 12px;
     text-align: right;
 }
 
-/* ===== 10. Responsive design ===== */
+/* ========================================
+   11. TABLET RESPONSIVE
+======================================== */
 @media (max-width: 1000px) {
     .page-layout {
         grid-template-columns: minmax(0, 1fr) 250px;
@@ -554,6 +602,9 @@ select {
     }
 }
 
+/* ========================================
+   12. MOBILE RESPONSIVE
+======================================== */
 @media (max-width: 760px) {
     .header-content {
         padding: 16px 20px;
@@ -608,6 +659,9 @@ select {
     }
 }
 
+/* ========================================
+   13. SMALL MOBILE
+======================================== */
 @media (max-width: 480px) {
     .header-content {
         align-items: flex-start;
@@ -642,5 +696,21 @@ select {
 
     .form-title {
         font-size: 23px;
+    }
+}
+
+/* ========================================
+   14. REDUCED MOTION
+======================================== */
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+        transition-duration: 0.01ms !important;
+        animation-duration: 0.01ms !important;
     }
 }
